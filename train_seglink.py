@@ -1,5 +1,8 @@
+# encoding=utf-8
 #test code to make sure the ground truth calculation and data batch works well.
-
+"""
+用于训练setlink模型
+"""
 import numpy as np
 import tensorflow as tf # test
 from tensorflow.python.ops import control_flow_ops
@@ -24,7 +27,6 @@ tf.app.flags.DEFINE_float('link_cls_loss_weight', 1.0, 'the loss weight of linka
 
 tf.app.flags.DEFINE_string('train_dir', None, 
                            'the path to store checkpoints and eventfiles for summaries')
-
 tf.app.flags.DEFINE_string('checkpoint_path', None, 
    'the path of pretrained model to be used. If there are checkpoints in train_dir, this config will be ignored.')
 
