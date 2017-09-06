@@ -1,5 +1,8 @@
+# encoding=utf-8
 #test code to make sure the ground truth calculation and data batch works well.
-
+"""
+用于训练setlink模型
+"""
 import numpy as np
 import tensorflow as tf # test
 from tensorflow.python.ops import control_flow_ops
