@@ -20,8 +20,6 @@ slim = tf.contrib.slim
 
 import util
 
-
-
 def int64_feature(value):
     """Wrapper for inserting int64 features into Example proto.
     """
@@ -64,11 +62,11 @@ def convert_to_example(image_data, filename, labels, ignored, labels_text, bboxe
       labels_text: list of strings, human-readable labels;
       oriented_bboxes: list of bounding oriented boxes; each box is a list of floats in [0, 1];
           specifying [x1, y1, x2, y2, x3, y3, x4, y4]
-      bboxes: list of bbox in rectangle, [xmin, ymin, xmax, ymax] 
+      bboxes: list of bbox in rectangle, [xmin, ymin, xmax, ymax]
     Returns:
       Example proto
     """
-    
+
     image_format = b'JPEG'
     oriented_bboxes = np.asarray(oriented_bboxes)
     bboxes = np.asarray(bboxes)
@@ -98,7 +96,7 @@ def convert_to_example(image_data, filename, labels, ignored, labels_text, bboxe
 
 def get_split(split_name, dataset_dir, file_pattern, num_samples, reader=None):
     dataset_dir = util.io.get_absolute_path(dataset_dir)
-    
+
     if util.str.contains(file_pattern, '%'):
         file_pattern = util.io.join_path(dataset_dir, file_pattern % split_name)
     else:
